@@ -1,0 +1,33 @@
+Source: commons-io
+Section: java
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders: Varun Hiremath <varun@debian.org>,
+ Kumar Appaiah <akumar@ee.iitm.ac.in>,
+ Jakub Adam <jakub.adam@ktknet.cz>,
+ Emmanuel Bourg <ebourg@apache.org>
+Build-Depends: debhelper (>= 8), cdbs, default-jdk
+Build-Depends-Indep: maven-repo-helper, ant, junit
+Standards-Version: 3.9.4
+Homepage: http://commons.apache.org/io/
+Vcs-Svn: svn://svn.debian.org/svn/pkg-java/trunk/commons-io
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-java/trunk/commons-io
+
+Package: libcommons-io-java
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: libcommons-io-java-doc
+Description: Common useful IO related classes
+ Commons-IO contains utility classes, stream implementations, file filters and
+ endian classes.
+
+Package: libcommons-io-java-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: libcommons-io-java
+Description: Common useful IO related classes - documentation
+ Commons-IO contains utility classes, stream implementations, file filters and
+ endian classes.
+ .
+ This package provides the API documentation for the Commons-IO library.

@@ -1,0 +1,23 @@
+From: Jakub Adam <jakub.adam@ktknet.cz>
+Date: Sun, 16 Oct 2011 22:55:56 +0200
+Subject: add-osgi-metadata
+
+---
+ build.xml |    6 ++++++
+ 1 files changed, 6 insertions(+), 0 deletions(-)
+
+--- a/build.xml
++++ b/build.xml
+@@ -242,6 +242,12 @@
+         <attribute name="Implementation-Vendor-Id" value="org.apache"/>
+         <attribute name="X-Compile-Source-JDK"     value="${compile.source}"/>
+         <attribute name="X-Compile-Target-JDK"     value="${compile.target}"/>
++        <attribute name="Bundle-ManifestVersion"   value="2"/>
++        <attribute name="Bundle-Name"              value="Apache Commons IO"/>
++        <attribute name="Bundle-Vendor"            value="The Apache Software Foundation"/>
++        <attribute name="Bundle-SymbolicName"      value="org.apache.commons.io"/>
++        <attribute name="Bundle-Version"           value="${component.version}"/>
++        <attribute name="Export-Package"           value='org.apache.commons.io;version="1.4.9999",org.apache.commons.io.comparator;version="1.4.9999",org.apache.commons.io.filefilter;version="1.4.9999",org.apache.commons.io.input;version="1.4.9999",org.apache.commons.io.output;version="1.4.9999",org.apache.commons.io;version="${component.version}",org.apache.commons.io.comparator;version="${component.version}",org.apache.commons.io.filefilter;version="${component.version}",org.apache.commons.io.input;version="${component.version}",org.apache.commons.io.output;version="${component.version}",org.apache.commons.io.monitor;version="${component.version}"'/>
+     </manifest>
+ 
+     <jar jarfile="${build.home}/${final.name}.jar"

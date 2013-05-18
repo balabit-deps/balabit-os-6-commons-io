@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/ant.mk
+
+PACKAGE              := $(DEB_SOURCE_PACKAGE)
+VERSION              := $(DEB_UPSTREAM_VERSION)
+JAVA_HOME            := /usr/lib/jvm/default-java
+# no junit at the moment
+DEB_JARS := #junit ant-junit
+DEB_ANT_BUILD_TARGET := jar javadoc
+
+binary-post-install/lib$(PACKAGE)-java::
+	mh_installpoms -plib$(PACKAGE)-java
+	mh_installjar -plib$(PACKAGE)-java -l pom.xml target/$(PACKAGE)-$(VERSION).jar
+
+clean::
+	-rm -rf debian/tmp
+
+get-orig-source:
+	-uscan --upstream-version 0 --rename

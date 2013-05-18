@@ -1,0 +1,2 @@
+add-osgi-metadata.patch
+fix-ant-build-version.patch
